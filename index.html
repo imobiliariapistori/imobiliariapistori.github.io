@@ -1,20 +1,207 @@
-<!-- HTML template for the frontend react app: https://developer.mozilla.org/en-US/docs/Web/HTML -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Um incrível projeto do Skip</title>
-    <meta name="description" content="Projeto gerado usando Skip (https://goskip.dev)" />
-    <meta name="author" content="Skip (https://goskip.dev)" />
-    <meta property="og:image" content="/og-image.png" />
-    <script type="module" crossorigin src="/assets/index-D5mItmpS.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DZg-W769.css">
-  </head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pistori & Associados | Imóveis de Luxo e Bem-Estar</title>
+    <meta name="description" content="Especialistas em conectar seus desejos de vida às melhores oportunidades do mercado imobiliário em harmonia com a natureza.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-  <body>
-    <div id="root"></div>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <a href="#inicio" class="logo-link">
+                <img src="img/logo_pa.jpg" alt="Logo Pistori & Associados" class="logo-img">
+                <span class="logo-text">Pistori & Associados</span>
+            </a>
 
-    <!-- @skip-protected: Do not remove. App entrypoint. -->
-  </body>
+            <nav class="main-nav">
+                <a href="#inicio" class="nav-link">Início</a>
+                <a href="#imoveis" class="nav-link">Imóveis</a>
+                <a href="#sobre" class="nav-link">Sobre Nós</a>
+                <a href="#contato" class="nav-link">Contato</a>
+                <a href="#contato" class="btn btn-primary" style="height: 2.8rem; padding: 0 1.5rem; font-size: 0.9rem;">Falar com Assessoria</a>
+            </nav>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#imoveis" class="nav-link">Imóveis</a>
+        <a href="#sobre" class="nav-link">Sobre Nós</a>
+        <a href="#contato" class="nav-link">Contato</a>
+        <a href="#contato" class="btn btn-primary">Fale Conosco</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg">
+            <img src="https://img.usecurling.com/p/1920/1080?q=horizontal%20condominium%20nature" alt="Condomínio em meio à natureza">
+        </div>
+        <div class="container reveal">
+            <span class="hero-subtitle">Qualidade de Vida e Bem-Estar</span>
+            <h1>Imóveis que conectam você ao seu <span class="text-gradient-gold">próximo capítulo.</span></h1>
+            <p>Especialistas em conectar seus desejos de vida às melhores oportunidades do mercado imobiliário em harmonia com a natureza.</p>
+            <div class="hero-actions">
+                <a href="#imoveis" class="btn btn-primary">Ver Imóveis <i class="ri-arrow-right-line" style="margin-left: 8px;"></i></a>
+                <a href="https://wa.me/556239141992" target="_blank" class="btn btn-outline">Falar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="imoveis">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Empreendimentos em <span style="color: var(--gold);">Destaque</span></h2>
+                <p>Descubra oportunidades únicas e exclusivas para o seu bem-estar e investimento inteligente na região metropolitana de Goiânia.</p>
+            </div>
+            
+            <div class="properties-grid" id="properties-container">
+                <!-- Cards will be injected by JavaScript from Supabase -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--muted-foreground);">
+                    Carregando oportunidades exclusivas...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container reveal">
+            <div class="about-img-container">
+                <img src="https://img.usecurling.com/p/800/1000?q=woman%20nature%20office%20plants" alt="Nossa História" class="about-img">
+            </div>
+            <div class="about-content">
+                <span style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 8px;">Nossa História</span>
+                <h2>Muito além de tijolos, nós construímos conexões.</h2>
+                <div class="accent-bar"></div>
+                
+                <div class="about-text">
+                    <p>A Pistori & Associados nasceu da compreensão humana de que mudar de casa é, frequentemente, recomeçar uma história.</p>
+                    <p>Liderada por uma profissional com sólida bagagem em administração, mas com o olhar sensível de uma terapeuta experiente, nossa assessoria aplica a escuta ativa para entender não apenas o orçamento, mas as vibrações e as necessidades reais da sua família.</p>
+                </div>
+
+                <ul class="benefits-list">
+                    <li><div class="check-icon"><i class="ri-check-line"></i></div> <span>Atendimento humanizado e escuta ativa</span></li>
+                    <li><div class="check-icon"><i class="ri-check-line"></i></div> <span>Assessoria jurídica e administrativa completa</span></li>
+                    <li><div class="check-icon"><i class="ri-check-line"></i></div> <span>Curadoria criteriosa de imóveis de alto padrão</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato">
+        <div class="container">
+            <div class="contact-container reveal">
+                <div class="contact-info">
+                    <span style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 8px;">Assessoria Exclusiva</span>
+                    <h2>Dê o primeiro passo para o seu novo lar</h2>
+                    <p style="color: var(--muted-foreground); margin-bottom: 30px;">Deixe seus dados e nossa equipe de especialistas entrará em contato para entender suas necessidades e apresentar as melhores oportunidades.</p>
+                    
+                    <div class="instant-support">
+                        <h4 style="margin-bottom: 8px;">Atendimento Imediato</h4>
+                        <p style="font-size: 0.9rem; color: var(--muted-foreground); margin-bottom: 16px;">Prefere conversar agora? Chame nossa equipe diretamente pelo WhatsApp.</p>
+                        <a href="https://wa.me/556239141992" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: 700; font-size: 1.2rem;">
+                            <i class="ri-whatsapp-line"></i> (62) 3914-1992
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" class="form-control" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" class="form-control" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp</label>
+                            <input type="tel" class="form-control" placeholder="(00) 00000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensagem (Opcional)</label>
+                            <textarea class="form-control" placeholder="Como podemos te ajudar?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>Pistori & Associados</h4>
+                    <span class="tagline">Empreendimentos Imobiliários</span>
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: var(--muted-foreground);">Especialistas em conectar seus desejos de vida às melhores oportunidades do mercado imobiliário em harmonia com a natureza.</p>
+                    <div style="margin-top: 20px; display: flex; gap: 16px;">
+                        <a href="#" style="color: var(--muted-foreground); font-size: 1.2rem;"><i class="ri-instagram-line"></i></a>
+                        <a href="#" style="color: var(--muted-foreground); font-size: 1.2rem;"><i class="ri-linkedin-box-line"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 24px; font-size: 1.1rem;">Contato</h4>
+                    <ul class="footer-links">
+                        <li><i class="ri-map-pin-line" style="color: var(--primary);"></i> <span>Av. Perimetral Norte, 15<br>Pátio Vitta - Goiânia-GO</span></li>
+                        <li><i class="ri-phone-line" style="color: var(--primary);"></i> <span>(62) 3914-1992</span></li>
+                        <li><i class="ri-mail-line" style="color: var(--primary);"></i> <span>pistoriimobiliaria@gmail.com</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 24px; font-size: 1.1rem;">Localização</h4>
+                    <div class="footer-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.427845763073!2d-49.2625!3d-16.6528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDM5JzEwLjEiUyA0OcKwMTUnNDUuMCJX!5e0!3m2!1sen!2sbr!4v1630000000000" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; border-top: 1px solid var(--border); padding-top: 30px; font-size: 0.75rem; color: var(--muted-foreground);">
+                <p>&copy; 2026 Pistori & Associados Empreendimentos Imobiliários. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/556239141992" target="_blank" class="floating-wa">
+        <i class="ri-whatsapp-line"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
 </html>
